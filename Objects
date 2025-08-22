@@ -1,0 +1,24 @@
+OBJECT:
+
+In Object-Oriented Programming (OOP), an object is a fundamental building block that represents a real-world entity or a concept within a program. 
+It is an instance of a class, which serves as a blueprint or template defining the object's structure and behavior.
+
+JAVA CODE:
+
+/** class code **/
+
+    class Dog {
+        String name;
+        String breed;
+
+        void bark() {
+            System.out.println(name + " barks!");
+        }
+    }
+
+
+/** object code **/
+
+
+// Creating an object (instance) of the Dog class
+Dog myDog = new Dog();
