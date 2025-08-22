@@ -1,0 +1,29 @@
+Access modifiers: 
+
+Access modifiers in Java are keywords that control the visibility and accessibility of classes, methods, variables, and constructors within a Java application. 
+They are crucial for implementing encapsulation, a fundamental principle of object-oriented programming that restricts direct access to an object's internal components. 
+
+
+There are four primary access modifiers in Java: 
+
+public:
+Visibility: Accessible from any other class in the application, regardless of the package.
+Scope: Widest scope, allowing universal access.
+
+
+private:
+Visibility: Accessible only within the class where they are declared.
+Scope: Most restricted scope, limiting access to the defining class.
+
+
+protected:
+Visibility: Accessible within the same package and in subclasses, even if the subclasses are in different packages.
+Scope: Allows controlled access, particularly useful for inheritance scenarios.
+
+
+default (no modifier):
+Visibility: Accessible only to other classes within the same package.
+Scope: Limits visibility to the package level. Also known as "package-private."
+
+These modifiers are essential for managing how data and methods are accessed and modified, contributing to the development of secure, maintainable, 
+and well-structured Java code.
