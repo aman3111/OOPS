@@ -1,0 +1,110 @@
+POLYMORPHISM:
+
+When we try to do same work in different method/ways , it is the process of Polymorphism.
+
+Polymorphism is of two types:
+*Method Overloading
+*Method Overriding
+
+
+* Method Overloading:
+
+Method overloading in Java is a feature of polymorphism that allows a class to have multiple methods with the same name, provided their parameter lists are different. 
+This distinction in parameter lists can be based on: 
+
+Number of parameters: Methods can have the same name but accept a different count of arguments.
+Type of parameters: Methods can have the same name but accept arguments of different data types.
+Order of parameters: Methods can have the same name but accept arguments of the same types in a different sequence.
+
+JAVA CODE:
+
+class Student {
+    String name;
+    int age;
+
+    public void info(String name) {
+        System.out.println(this.name);
+    }
+
+    public void info(String name, int age) {
+        System.out.println(this.name);
+        System.out.println(this.age);
+    }
+
+    public void info(int age) {
+        System.out.println(this.age);
+    }
+
+    Student() {
+        System.out.println("Constructor Called");
+    }
+}
+
+class java {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.name = "Aman";
+        s1.age = 21;
+
+        s1.info(s1.name, s1.age);
+    }
+}
+
+
+* Method Overriding:
+
+Method overriding in Java is a feature of object-oriented programming that allows a subclass to provide a specific implementation for a method
+that is already defined in its superclass. This mechanism is crucial for achieving runtime polymorphism. 
+
+
+JAVA CODE: 
+
+
+class Student {
+    String name;
+    int age;
+
+    // Constructor
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to be overridden
+    public void info() {
+        System.out.println("Student Info:");
+        System.out.println("Name: " + this.name);
+        System.out.println("Age: " + this.age);
+    }
+}
+
+// Child class
+class CollegeStudent extends Student {
+    String college;
+
+    CollegeStudent(String name, int age, String college) {
+        super(name, age); // call parent constructor
+        this.college = college;
+    }
+
+    // Overriding the parent method
+    @Override
+    public void info() {
+        System.out.println("College Student Info:");
+        System.out.println("Name: " + this.name);
+        System.out.println("Age: " + this.age);
+        System.out.println("College: " + this.college);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        // Parent reference but child object
+        Student s1 = new CollegeStudent("Aman", 21, "IIT Delhi");
+
+        // Calls the overridden method at runtime
+        s1.info();
+    }
+}
+
+
