@@ -1,0 +1,28 @@
+Encapsulation: 
+
+Encapsulation is a core object-oriented programming (OOP) concept that bundles data and the methods (functions) that 
+operate on that data into a single unit, like a class, and restricts direct access to the data. This "bundling" is often achieved by making 
+internal data private and providing public "getter" and "setter" methods for controlled access.
+
+
+JAVA CODE:
+
+class BankAccount {
+    private String password;   // private field
+
+    public void setPassword(String password) { // setter
+        this.password = password;
+    }
+
+    public String getPassword() { // getter
+        return password;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount();
+        acc.setPassword("mySecret123");    // setting private data
+        System.out.println("Password: " + acc.getPassword()); // accessing safely
+    }
+}
