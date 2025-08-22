@@ -1,0 +1,49 @@
+Interface:
+
+In Java, an interface is a blueprint of a class that defines a contract for classes to implement. It is a reference type, similar to a class, but with key distinctions:
+
+
+Abstraction: Interfaces are used to achieve abstraction. They can contain abstract methods (methods without a body) that must be implemented 
+by any class that implements the interface.
+
+Constants: Interfaces can declare static and final constants. These are implicitly public, static, and final.
+
+Multiple Inheritance: Java does not support multiple inheritance of classes, but it achieves a similar concept through interfaces, allowing a class
+to implement multiple interfaces.
+
+Default and Static Methods (Java 8+): From Java 8 onwards, interfaces can also include default methods (methods with a body that provide a default implementation) 
+and static methods (methods belonging to the interface itself, not to implementing classes).
+
+No Instantiation: Interfaces cannot be instantiated directly.
+
+Declaration: An interface is declared using the interface keyword.
+
+
+JAVA CODE:
+
+
+interface Animal {
+    void sound();   // abstract method (by default public & abstract)
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat implements Animal {
+    public void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Animal a1 = new Dog();
+        a1.sound();
+
+        Animal a2 = new Cat();
+        a2.sound();
+    }
+}
