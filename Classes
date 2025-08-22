@@ -1,0 +1,30 @@
+ClASS:
+Class is like a blueprint of these Entities.
+For example if we see toyata have their blueprints of all cars.
+
+
+JAVA CODE:
+
+class Student {
+    String name;
+    int age;
+
+    public void info() {
+        System.out.println(this.name);
+        System.out.println(this.age);
+    }
+
+    Student() {
+        System.out.println("Constructor Called");
+    }
+}
+
+class java {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.name = "Aman";
+        s1.age = 21;
+
+        s1.info();
+    }
+}
