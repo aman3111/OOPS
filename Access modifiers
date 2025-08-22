@@ -15,6 +15,31 @@ private:
 Visibility: Accessible only within the class where they are declared.
 Scope: Most restricted scope, limiting access to the defining class.
 
+JAVA CODE:
+
+class BankAccount {
+    private String password;  // private field
+
+    // setter
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    // getter
+    public String getPassword() {
+        return password;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount();
+        acc.setPassword("mySecret123");   // set private value
+        System.out.println("Password: " + acc.getPassword()); // get private value
+    }
+}
+
+
 
 protected:
 Visibility: Accessible within the same package and in subclasses, even if the subclasses are in different packages.
