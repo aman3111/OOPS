@@ -1,0 +1,112 @@
+INHERITANCE:
+
+Inheritance in Java is a core principle of Object-Oriented Programming (OOP) that allows a new class (subclass or derived class) to inherit properties and behaviors 
+(fields and methods) from an existing class (superclass or base class).
+
+
+Their are four types of Inheritance in JAVA are:
+
+
+* Single Inheritance: 
+
+In single inheritance, a subclass inherits from only one superclass. This is the most straightforward type, where one class extends another.
+
+JAVA CODE:
+
+class Shape {
+    public void area() {
+        System.out.println("displays area");
+
+    }
+}
+
+class Traingle extends Shape {
+    public void area(int l, int h) {
+        System.out.println(0.5 * l * h);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Traingle t1 = new Traingle();
+        t1.area(21, 4);
+    }
+}
+
+* Multilevel Inheritance: 
+
+This occurs when a class is derived from a class which is itself derived from another class, forming a chain of inheritance.
+
+JAVA CODE:
+
+class Shape {
+    public void area() {
+        System.out.println("displays area");
+
+    }
+}
+
+class Traingle extends Shape {
+    public void area(int l, int h) {
+        System.out.println(0.5 * l * h);
+    }
+}
+
+class Equilateral extends Traingle {
+    public void area(int l, int h) {
+        System.out.println(0.5 * l * h);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Traingle t1 = new Traingle();
+        t1.area(21, 4);
+    }
+}
+
+
+* Hierarchical Inheritance: In this type, multiple subclasses inherit from a single superclass. This is useful when several specialized classes 
+share common functionalities from a base class.
+
+
+JAVA CODE:
+
+class Shape {
+    public void area() {
+        System.out.println("displays area");
+
+    }
+}
+
+class Traingle extends Shape {
+    public void area(int l, int h) {
+        System.out.println(0.5 * l * h);
+    }
+}
+
+class Circle extends Shape {
+    public void area(int r) {
+        System.out.println(3.14 * r * r);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Traingle t1 = new Traingle();
+        t1.area(21, 4);
+
+        Circle c1 = new Circle();
+        c1.area(4); // Circle's area method
+    }
+}
+
+
+
+* Hybrid Inheritance (through Interfaces): Hybrid inheritance is a combination of two or more of the above types.
+Since direct multiple inheritance through classes is not supported, hybrid inheritance in Java often involves a combination of class 
+inheritance and interface implementation. 
+
+
+
+Multilevel Inheritance: This occurs when a class is derived from a class which is itself derived from another class, forming a chain of inheritance.
