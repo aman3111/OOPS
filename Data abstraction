@@ -1,0 +1,39 @@
+Data abstraction:
+
+Data abstraction is the process of hiding complex, unnecessary details from a user or programmer and only displaying the 
+essential information needed to perform a task
+
+
+
+JAVA CODE:
+
+abstract class Shape {
+    // abstract method (no body)
+    abstract void area();
+
+    // normal method
+    void display() {
+        System.out.println("This is a shape.");
+    }
+}
+
+class Circle extends Shape {
+    int r;
+
+    Circle(int r) {
+        this.r = r;
+    }
+
+    // implementing abstract method
+    void area() {
+        System.out.println("Area of Circle: " + (3.14 * r * r));
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Shape s = new Circle(5);  // parent reference, child object
+        s.display();              // normal method
+        s.area();                 // implemented abstract method
+    }
+}
