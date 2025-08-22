@@ -1,0 +1,115 @@
+CONSTRUCTOR:
+
+In Java, a constructor is a special type of routine that is used to initialize objects of a class. 
+When an object is created using the new keyword, the constructor of that class is automatically invoked.
+
+
+Their are three types of constructor are :
+
+* Default Constructor: 
+
+If a class does not explicitly define any constructor, the Java compiler automatically provides a public, 
+no-argument constructor during compilation. This is known as the default constructor.
+
+
+JAVA CODE:
+
+
+class Student {
+    String name;
+    int age;
+
+    public void info(String name) {
+        System.out.println(this.name);
+    }
+
+
+}
+
+class java {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.name = "Aman";
+        s1.age = 21;
+
+        s1.info(s1.name);
+    }
+}
+
+
+Parameterized Constructor:
+
+A constructor that takes one or more arguments is called a parameterized constructor.
+It allows for initializing instance variables with specific values provided during object creation.
+
+
+
+JAVA CODE:
+
+
+class Student {
+    String name;
+    int age;
+
+    public void info(String name, int age) {
+        System.out.println(this.name);
+        System.out.println("Parameter name: " + name);
+    }
+
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+class java {
+    public static void main(String[] args) {
+        Student s1 = new Student("Aman", 21);
+        s1.info("Aman", 21);
+    }
+}
+
+Copy Constructor:
+
+A copy constructor in Java is a special type of constructor that facilitates the creation of anew object by copying the values of an existing object of the same class.
+This mechanism allows for the duplication of an object's state, resulting in a new, independent instance with identical data. 
+
+
+JAVA CODE:
+
+class Student {
+    String name;
+    int age;
+
+    // Normal constructor
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Copy constructor
+    Student(Student s2) {
+        this.name = s2.name;
+        this.age = s2.age;
+    }
+
+    public void info(String name, int age) {
+        System.out.println("Object name: " + this.name);
+        System.out.println("Parameter name: " + name);
+        System.out.println("Object age: " + this.age);
+        System.out.println("Parameter age: " + age);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student("Aman", 21);
+        s1.info("Rahul", 22);
+
+        // Copy constructor creates s2 with same values as s1
+        Student s2 = new Student(s1);
+        s2.info("Raj", 23);
+    }
+}
+
+
